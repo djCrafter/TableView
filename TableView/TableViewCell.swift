@@ -8,10 +8,7 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
-
-    
-    
+class TableViewCell: UITableViewCell {    
     @IBOutlet weak var contactImage: UIImageView!
     @IBOutlet weak var lableName: UILabel!
     @IBOutlet weak var lablePhone: UILabel!
@@ -25,16 +22,4 @@ class TableViewCell: UITableViewCell {
             lablePhone.text = contact?.phone
         }
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

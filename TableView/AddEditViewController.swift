@@ -32,10 +32,9 @@ class AddEditViewController: UIViewController {
         }
     }
     
-    
     @objc func saveContact(sender: UIBarButtonItem){
         if contact == nil {
-            let newContact = Contact(name: contactName.text ?? "", company: companyName.text ?? "", phone: phoneNumber.text ?? "", photoName: "face8g")
+            let newContact = Contact(name: contactName.text ?? "", company: companyName.text ?? "", phone: phoneNumber.text ?? "", photoName: "default_face")
             ContactList.contactList.contactListArray.append(newContact)
         }
         else{
@@ -45,7 +44,4 @@ class AddEditViewController: UIViewController {
         }
             navigationController?.popViewController(animated: true)
     }
-    
-
-    
 }

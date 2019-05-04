@@ -10,29 +10,13 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var contactPhoto: UIImageView! {
-        didSet{
-            guard let image = contact?.photoName else {return}
-            contactPhoto.image = UIImage(named: image)
-        }
-    }
-    @IBOutlet weak var contactName: UILabel! {
-        didSet {
-            contactName.text = contact?.name
-        }
-    }
-    @IBOutlet weak var contactCompany: UILabel! {
-        didSet{
-            contactCompany.text = contact?.company
-        }
-    }
-    @IBOutlet weak var contactPhone: UILabel! {
-        didSet{
-            contactPhone.text = contact?.phone
-        }
-    }
+    @IBOutlet weak var contactPhoto: UIImageView!
+    @IBOutlet weak var contactName: UILabel!
+    @IBOutlet weak var contactCompany: UILabel!
+    @IBOutlet weak var contactPhone: UILabel!
+   
     
-    var contact: Contact?
+    private var contact: Contact?
     var id: Int?
     
     override func viewDidLoad() {
@@ -55,6 +39,8 @@ class DetailViewController: UIViewController {
             contactName.text = contact?.name
             contactCompany.text = contact?.company
             contactPhone.text = contact?.phone
+            guard let image = contact?.photoName else {return}
+            contactPhoto.image = UIImage(named: image)
         }
     }
     

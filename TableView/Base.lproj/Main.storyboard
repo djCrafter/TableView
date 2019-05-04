@@ -79,7 +79,7 @@
                     <navigationItem key="navigationItem" id="IJ6-CD-Lsd">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="XG1-lK-FIN">
                             <connections>
-                                <segue destination="UUU-NF-WGk" kind="show" id="cJu-YE-Eeg"/>
+                                <segue destination="UUU-NF-WGk" kind="show" identifier="AddEditSeague" id="cJu-YE-Eeg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
