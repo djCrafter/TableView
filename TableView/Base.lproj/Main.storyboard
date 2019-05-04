@@ -76,10 +76,15 @@
                             <outlet property="delegate" destination="e2E-4B-XaV" id="U22-eV-dQe"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="IJ6-CD-Lsd"/>
+                    <navigationItem key="navigationItem" id="IJ6-CD-Lsd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XG1-lK-FIN">
+                            <connections>
+                                <segue destination="UUU-NF-WGk" kind="show" id="cJu-YE-Eeg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="e60-6a-oTK" kind="show" identifier="ShowDetailSegue" id="Mo5-UN-PfQ"/>
-                        <segue destination="UUU-NF-WGk" kind="show" identifier="AddEditSegue" id="LZS-wv-YWK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7VP-WC-uSi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -155,13 +160,49 @@
                     <view key="view" contentMode="scaleToFill" id="sAQ-3X-Hzp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="fld-ya-Z9a">
+                                <rect key="frame" x="50" y="386" width="314" height="124"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contact name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q4Z-zm-eb5">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Company name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jsM-UF-KS5">
+                                        <rect key="frame" x="0.0" y="47" width="314" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sQ4-5S-WF0">
+                                        <rect key="frame" x="0.0" y="94" width="314" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Fo6-zT-Nbg" firstAttribute="trailing" secondItem="fld-ya-Z9a" secondAttribute="trailing" constant="50" id="6aE-1I-qzR"/>
+                            <constraint firstItem="fld-ya-Z9a" firstAttribute="centerY" secondItem="sAQ-3X-Hzp" secondAttribute="centerY" id="R1P-WT-WJh"/>
+                            <constraint firstItem="fld-ya-Z9a" firstAttribute="leading" secondItem="Fo6-zT-Nbg" secondAttribute="leading" constant="50" id="aWa-9Y-qsP"/>
+                            <constraint firstItem="fld-ya-Z9a" firstAttribute="centerX" secondItem="sAQ-3X-Hzp" secondAttribute="centerX" id="eNs-Ls-TTp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Fo6-zT-Nbg"/>
                     </view>
+                    <connections>
+                        <outlet property="companyName" destination="jsM-UF-KS5" id="Ckw-6K-tm3"/>
+                        <outlet property="contactName" destination="q4Z-zm-eb5" id="q3t-n0-Fqy"/>
+                        <outlet property="phoneNumber" destination="sQ4-5S-WF0" id="SxQ-8P-yxS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q2Q-yM-GTY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2877" y="436"/>
+            <point key="canvasLocation" x="2876.811594202899" y="435.9375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="thh-zD-eHM">
@@ -183,6 +224,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LZS-wv-YWK"/>
+        <segue reference="F6y-1h-yfv"/>
     </inferredMetricsTieBreakers>
 </document>

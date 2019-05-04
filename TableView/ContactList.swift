@@ -14,8 +14,7 @@ class ContactList {
  public static var contactList = ContactList()
  public var contactListArray = Array<Contact>()
 
-    init() {
-        
+    init() {        
         contactListArray.append(Contact(name: "Nikolai Ivanov", company: "MetIvest", phone: "+380631054408", photoName: "face1m"))
         contactListArray.append(Contact(name: "Evgeniy Nikonov", company: "DTEK", phone: "+380685321224", photoName: "face2m"))
         contactListArray.append(Contact(name: "Sergei Petrov", company: "DMR-Company", phone: "+380996321223", photoName: "face3m"))

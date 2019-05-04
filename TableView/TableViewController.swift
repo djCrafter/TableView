@@ -18,24 +18,24 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
         tableView.delegate = self
         tableView.dataSource = self
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.reloadData()
     }
 
-    // MARK: - Table view data source
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        contactList = ContactList.contactList.contactListArray
+        tableView.reloadData()
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return contactList.count
     }
 
@@ -61,6 +61,7 @@ class TableViewController: UITableViewController {
         if segue.identifier == "ShowDetailSegue" {
             if let detaiViewController = segue.destination as? DetailViewController {
              detaiViewController.contact = contactList[cellId]
+             detaiViewController.id = cellId
             }
         }
     }
